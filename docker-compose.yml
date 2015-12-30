@@ -1,5 +1,6 @@
 wordpress:
   image: wordpress
+  restart: always
   links:
     - db:mysql
   volumes:
@@ -13,8 +14,9 @@ wordpress:
 
 db:
   image: mariadb
+  restart: always
   volumes:
     - ./db:/var/lib/mysql
   environment:
-    MYSQL_ROOT_PASSWORD: f7yMdm8TNqU87Mp33084wlb2K
+    MYSQL_ROOT_PASSWORD: yourPasswordHere
 
